@@ -82,12 +82,13 @@
 				<?php endif; ?>
 			</div><!-- /.footer__bottom -->
 		</div><!-- /.wrap -->
+		
 	</footer>
 </main><!-- /.main -->
 <div class="mobile-menu">
 	<div class="mobile-menu__top">
 		<form role="search" method="get" class="mobile-menu__search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<input type="search" <?php echo 'id="' . (isset($unique_id) ? $unique_id : esc_attr( uniqid( 'search-form-' ) )) . '"'; ?> class="input-search mobile-menu__search-field" value="<?php echo get_search_query(); ?>" name="s" autocomplete="off" />
+			<input type="search" id="<?php echo $unique_id; ?>" class="input-search mobile-menu__search-field" value="<?php echo get_search_query(); ?>" name="s" autocomplete="off" />
 			<svg class="icon icon--search">
 				<use xlink:href="#icon--search"></use>
 			</svg>
@@ -114,44 +115,10 @@
 		) ); ?>
 	</nav>
 	<?php endif; ?>
-	<div class="wpml-ls-statics-shortcode_actions">
-		<ul>
-			<?php echo iso_list_menu('strtoupper'); ?>
-		</ul>
-	</div>
+
 </div><!-- /.mobile-menu -->
 <a href="#" class="go-top"><span></span></a>
-<div class="popup" id="popup-contact">
-    <span class="popup__icon">
-        <svg class="icon icon--support-large">
-            <use xlink:href="#icon--support-large"></use>
-        </svg>
-    </span>
-    <?php dynamic_sidebar( 'sidebar-5' ); ?>
-    <a href="#" class="popup__close">
-        <!-- Close -->
-        <span></span>
-    </a>
-</div>
-
-
-<script type="text/javascript">
-/* <![CDATA[ */
-window._lea = window._lea || [ ];
-
-// Start editable part
-window._lea.push({
-  id: 'yGXV42J7u8xrDr4xU1sn',
-  module: 'Profiling',
-  event: 'PageView'
-});
-// End editable part
-
-(function(d){var s=d.createElement("script");s.async=true;s.src=(d.location.protocol=="https:"?"https:":"http:")+"//tc.connects.ch/lila.js";var a=d.getElementsByTagName("script")[0];a.parentNode.insertBefore(s,a)})(document);
-
-/* ]]> */
-</script>
-
 <?php wp_footer(); ?>
+
 </body>
 </html>
